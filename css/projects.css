@@ -1,9 +1,11 @@
+/* Reset y Box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Fuentes y Colores Básicos */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f9f9f9;
@@ -12,6 +14,7 @@ body {
     margin: 0;
 }
 
+/* Header y Navegación */
 header {
     background-color: #8c9091;
     padding: 1.25rem;
@@ -39,10 +42,7 @@ header .nav-links {
     display: flex;
     margin: 0;
     margin-left: auto;
-}
-
-header li {
-    display: inline;
+    transition: max-height 0.3s ease;
 }
 
 header .nav-links li {
@@ -60,25 +60,54 @@ header .nav-links li a:hover {
     color: #ffab00;
 }
 
-header ul {
-    list-style: none;
-    padding: 0;
+/* Ícono de Hamburguesa */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
 }
 
-header ul li {
-    display: inline;
-    margin: 0 0.9375rem; 
+.burger span {
+    display: block;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
-header ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    background-color: #8c9091;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: center;
 }
 
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
 
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header .nav-links li {
+        margin: 1rem 0;
+    }
+}
+
+/* Sección de Proyectos */
 .projects {
-    padding: 100px 20px; /* Ajustamos padding debido a la posición fija del header */
+    padding: 100px 20px; /* Ajustado por el header fijo */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -104,8 +133,13 @@ header ul li a {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform: translateY(30px);
-    margin: 20px 0;
-    transition: transform 0.3s ease;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card img {
@@ -147,13 +181,9 @@ header ul li a {
     transform: translateY(-3px);
 }
 
-.project-card:hover { transform: scale(1.05); }
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
+.project-card:hover {
+    transform: scale(1.05);
 }
-
 
 footer {
     background-color: #333;
@@ -177,16 +207,41 @@ footer a:hover {
     color: #ff8f00;
 }
 
-@media (max-width: 768px) {
+/* Botón "Volver arriba" */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #ffab00;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#scrollTopBtn.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollTopBtn:hover {
+    background-color: #ff8f00;
+}
+
+/* Media Queries Adicionales */
+@media (min-width: 1024px) {
+    .projects h1 {
+        font-size: 3rem;
+    }
+
     .project-card {
-        padding: 15px;
-    }
-
-    header .nav-links {
-        flex-direction: column;
-    }
-
-    header .nav-links li {
-        margin-bottom: 10px;
+        padding: 25px;
     }
 }

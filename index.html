@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Darwin Muñoz, desarrollador web junior especializado en HTML, CSS y JavaScript. Descubre mis proyectos y contacta conmigo.">
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@200;400;700&family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="css/normalize.css">
+    <link rel="preload" href="css/normalize.css" as="style">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Mi portafolio</title>
+    <title>Mi Portafolio</title>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">Logo</div>
+            <div class="burger" aria-label="Menú de navegación" aria-expanded="false" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="projects.html">Proyectos</a></li>
@@ -23,10 +29,10 @@
 
     <main>
         <section class="hero">
-            <div class="parallax-bg"></div>
+            <div class="parallax-bg" aria-hidden="true"></div>
             <div class="hero-content">
-                <h1>¡Hola, soy "aqui el nombre"!</h1>
-                <p>Desarrollador web especializado en crear experiencias digitales unicas.</p>
+                <h1>¡Hola, soy Darwin Muñoz!</h1>
+                <p>Desarrollador web especializado en crear experiencias digitales únicas.</p>
                 <a class="btn" href="projects.html">Ver mis proyectos</a>
             </div>
             
@@ -34,15 +40,18 @@
 
         <section class="about">
             <div>
-                <h2>Sobre mi</h2>
+                <h2>Sobre mí</h2>
                 <p>Desarrollador Junior apasionado por la creación de sitios web y aplicaciones que mezclan diseño y funcionalidad. Tengo experiencia en HTML, CSS y JavaScript.</p>
             </div>
         </section>
     </main>
 
+    <button id="scrollTopBtn" aria-label="Volver arriba">↑</button>
+
     <footer>
-        <p>@ 2024 Darwin Muñoz | <a href="mailto: darw.mun@gmail.com">Contacto</a></p>
+        <p>© 2024 Darwin Muñoz | <a href="mailto:darw.mun@gmail.com">Contacto</a></p>
     </footer>
-    
+
+    <script src="script.js" defer></script>
 </body>
 </html>

@@ -1,53 +1,123 @@
+/* Reset y Box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuentes y Colores Básicos */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
 }
 
+/* Header y Navegación */
 header {
     background-color: #6200ea;
     padding: 20px;
-    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header ul {
-    list-style: none;
-    padding: 0;
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header ul li a {
+header .logo {
     color: #ffffff;
-    text-decoration: none;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-h1 {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 2.5rem;
-    color: #6200ea;
+header .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    margin-left: auto;
+    transition: max-height 0.3s ease;
 }
 
+header .nav-links li {
+    margin: 0 15px;
+}
+
+header .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header .nav-links li a:hover {
+    color: #ffab00;
+}
+
+/* Ícono de Hamburguesa */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
+}
+
+.burger span {
+    display: block;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    background-color: #6200ea;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header .nav-links li {
+        margin: 1rem 0;
+    }
+}
+
+/* Sección de Contacto */
 .contact-form {
+    padding: 100px 20px; /* Ajustado por el header fijo */
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    padding-top: 80px; /* Espacio adicional para el header */
 }
 
 .contact-form h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
     text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #6200ea;
 }
 
 .contact-form label {
@@ -61,7 +131,7 @@ h1 {
 .contact-form textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
@@ -88,6 +158,14 @@ h1 {
     background-color: #3700b3;
 }
 
+/* Mensajes de Error */
+.error {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -99,13 +177,55 @@ footer {
     margin-top: 50px;
 }
 
-/* Estilos responsivos */
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #ffab00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #ff8f00;
+}
+
+/* Botón "Volver arriba" */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #ffab00;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#scrollTopBtn.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollTopBtn:hover {
+    background-color: #ff8f00;
+}
+
+/* Media Queries Adicionales */
 @media (max-width: 768px) {
     .contact-form {
-        padding: 15px;
+        padding: 80px 15px; /* Ajuste adicional para dispositivos pequeños */
     }
 
-    h1 {
+    .contact-form h1 {
         font-size: 2rem;
     }
 

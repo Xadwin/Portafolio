@@ -1,9 +1,11 @@
+/* Reset y Box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Fuentes y Colores Básicos */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f9f9f9;
@@ -12,6 +14,7 @@ body {
     margin: 0;
 }
 
+/* Header y Navegación */
 header {
     background-color: #b2babb;
     padding: 1.25rem;
@@ -35,9 +38,21 @@ header .logo {
 }
 
 header .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    margin-left: auto;
+    transition: max-height 0.3s ease;
+}
+
+header .nav-links li {
+    margin: 0 0.9375rem;
+}
+
+header .nav-links li a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 1rem;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
@@ -45,26 +60,52 @@ header .nav-links li a:hover {
     color: #ffab00;
 }
 
-header ul {
-    list-style: none;
-    padding: 0;
-}
-
-header ul li {
-    display: inline;
-    margin: 0 0.9375rem; 
-}
-
-header ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
+/* Ícono de Hamburguesa */
 .burger {
     display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
 }
 
+.burger span {
+    display: block;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    background-color: #b2babb;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header .nav-links li {
+        margin: 1rem 0;
+    }
+}
+
+/* Hero Section */
 .hero {
     height: 100vh;
     background-image: url('../img/parallax-bg.jpg');
@@ -78,7 +119,6 @@ header ul li a {
     position: relative;
     z-index: 1;
     padding: 1.25rem;
-    
 }
 
 .hero::before {
@@ -123,7 +163,7 @@ header ul li a {
     transform: translateY(-3px);
 }
 
-
+/* About Section */
 .about {
     padding: 80px 20px;
     max-width: 75rem;
@@ -133,7 +173,6 @@ header ul li a {
     align-items: center;
     gap: 50px;
     flex-wrap: wrap;
-    
 }
 
 .about img {
@@ -143,7 +182,7 @@ header ul li a {
 }
 
 .about div {
-    max-width: 37.5rem
+    max-width: 37.5rem;
 }
 
 .about h2 {
@@ -151,11 +190,13 @@ header ul li a {
     color: #000000;
     margin-bottom: 1.25rem;
 }
+
 .about p {
     font-size: 1.2rem;
     line-height: 1.8;
 }
 
+/* Footer */
 footer {
     background-color: #b2babb;
     color: white;
@@ -178,6 +219,7 @@ footer a:hover {
     color: #ff8f00;
 }
 
+/* Botón "Volver arriba" */
 #scrollTopBtn {
     display: none;
     position: fixed;
@@ -190,28 +232,37 @@ footer a:hover {
     border-radius: 50%;
     cursor: pointer;
     z-index: 1000;
-    transition: background-color 0.3 ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#scrollTopBtn.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 #scrollTopBtn:hover {
     background-color: #ff8f00;
 }
 
-@media (min-width: 768px) {
+/* Media Queries Adicionales */
+@media (min-width: 1024px) {
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 4rem;
     }
 
     .hero p {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
 
     .about {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        text-align: left;
     }
 
     .about img {
-        margin-bottom: 30px;
+        margin-bottom: 0;
     }
 }
