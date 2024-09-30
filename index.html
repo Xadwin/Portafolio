@@ -3,55 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de Darwin Muñoz, desarrollador web junior especializado en HTML, CSS y JavaScript. Descubre mis proyectos y contacta conmigo.">
-    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@200;400;700&family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="css/normalize.css" as="style">
+    <title>Mi Portafolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Mi Portafolio</title>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Logo</div>
-            <div class="burger" aria-label="Menú de navegación" aria-expanded="false" role="button" tabindex="0">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="logo">Mi Logo</div>
+            <div class="burger" id="burger">
+                <span></span><span></span><span></span>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="projects.html">Proyectos</a></li>
-                <li><a href="contact.html">Contacto</a></li>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="parallax-bg" aria-hidden="true"></div>
+        <section class="hero" id="home">
             <div class="hero-content">
-                <h1>¡Hola, soy Darwin Muñoz!</h1>
-                <p>Desarrollador web especializado en crear experiencias digitales únicas.</p>
-                <a class="btn" href="projects.html">Ver mis proyectos</a>
+                <h1>¡Hola! Soy "Tu Nombre"</h1>
+                <p>Desarrollador Web apasionado por crear experiencias digitales únicas y funcionales.</p>
+                <a class="btn" href="#projects">Ver mis proyectos</a>
             </div>
-            
         </section>
 
-        <section class="about">
-            <div>
+        <section class="about" id="about">
+            <div class="container">
                 <h2>Sobre mí</h2>
-                <p>Desarrollador Junior apasionado por la creación de sitios web y aplicaciones que mezclan diseño y funcionalidad. Tengo experiencia en HTML, CSS y JavaScript.</p>
+                <p>Soy un desarrollador junior con experiencia en tecnologías web como HTML, CSS, y JavaScript. Me especializo en crear sitios web visualmente atractivos con gran funcionalidad.</p>
+                <p>Durante mi formación, he trabajado en diversos proyectos tanto individuales como colaborativos, lo que me ha permitido desarrollar habilidades de comunicación, trabajo en equipo y resolución de problemas. Mi objetivo es seguir aprendiendo y mejorar como profesional, contribuyendo al éxito de proyectos web innovadores.</p>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <div class="container">
+                <h2>Habilidades</h2>
+                <ul class="skills-list">
+                    <li><strong>Lenguajes:</strong> HTML, CSS, JavaScript, Python</li>
+                    <li><strong>Frameworks:</strong> Vue.js, Node.js, Express.js</li>
+                    <li><strong>Herramientas:</strong> Git, GitHub, VS Code, Figma</li>
+                    <li><strong>Metodologías:</strong> Agile, Scrum</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2>Proyectos</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <img src="img/proyecto1.jpg" alt="Proyecto 1">
+                        <h3>Proyecto 1</h3>
+                        <p>Sitio web de e-commerce creado con HTML, CSS y JavaScript.</p>
+                        <a href="#" class="btn">Ver Proyecto</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="img/proyecto2.jpg" alt="Proyecto 2">
+                        <h3>Proyecto 2</h3>
+                        <p>Aplicación de gestión de tareas desarrollada con Vue.js y Node.js.</p>
+                        <a href="#" class="btn">Ver Proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2>Contacto</h2>
+                <form id="contactForm">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit" class="btn">Enviar</button>
+                </form>
             </div>
         </section>
     </main>
 
-    <button id="scrollTopBtn" aria-label="Volver arriba">↑</button>
-
     <footer>
-        <p>© 2024 Darwin Muñoz | <a href="mailto:darw.mun@gmail.com">Contacto</a></p>
+        <p>© 2024 Tu Nombre | <a href="mailto:correo@ejemplo.com">Contacto</a></p>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
