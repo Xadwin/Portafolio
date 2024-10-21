@@ -97,3 +97,9 @@ const showError = (input, message) => {
     error.textContent = message;
     input.parentElement.appendChild(error);
 }
+
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach((card) => {
+    card.classList.add('show');
+});

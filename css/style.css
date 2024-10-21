@@ -7,10 +7,12 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-    line-height: 1.6;
 }
+
 
 /* Header */
 header {
@@ -70,7 +72,7 @@ nav {
 
 /* Hero */
 .hero {
-    background-image: url('../img/hero-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -82,22 +84,14 @@ nav {
     position: relative;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-}
-
 .hero-content {
     z-index: 1;
 }
 
 .hero h1 {
     font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 1rem;
 }
 
@@ -178,7 +172,6 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     transform: translateY(30px);
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .project-card.show {
@@ -187,20 +180,30 @@ nav {
 }
 
 .project-card img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
 
 .project-card h2 {
-    font-size: 1.8rem;
-    color: #333;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .project-card p {
     font-size: 1rem;
     margin-bottom: 20px;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #ffab00;
 }
 
 .project-card video {
@@ -229,12 +232,74 @@ nav {
     transform: scale(1.05);
 }
 
+/* Contact Section */
+.contact {
+    background-color: #333;
+    color: #fff;
+    padding: 4rem 0;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.contact button[type="submit"] {
+    background-color: #ffab00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button[type="submit"]:hover {
+    background-color: #ff8f00;
+}
+
 /* Footer */
 footer {
     background-color: #333;
     color: #fff;
+    padding: 2rem 0;
     text-align: center;
-    padding: 1rem;
+}
+
+footer p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffab00;
 }
 
 @media (max-width: 768px) {
@@ -274,4 +339,5 @@ footer {
         margin-bottom: 2rem;
     }
 }
+
 
